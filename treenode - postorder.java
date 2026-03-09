@@ -22,16 +22,15 @@ public class Main{
         root.right = buildtree();
         return root;
     }
-    
-    public static void preorder(TreeNode root){
+    public static void postorder(TreeNode root){
         if(root == null) return;
-        preorder(root.left);
-        preorder(root.right);
+        postorder(root.left);
+        postorder(root.right);
         System.out.print(root.data+" ");
     }
 	public static void main(String[] args) {
 	    TreeNode root = buildtree();
 	    System.out.print("Preorder Traversal : ");
-	    preorder(root);
+	    postorder(root);
 	}
 }
