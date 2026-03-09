@@ -1,3 +1,4 @@
+
 import java.util.*;
 class TreeNode{
     int data;
@@ -22,15 +23,16 @@ public class Main{
         root.right = buildtree();
         return root;
     }
-    public static void postorder(TreeNode root){
+    
+    public static void inorder(TreeNode root){
         if(root == null) return;
-        postorder(root.left);
-        postorder(root.right);
+        inorder(root.left);
         System.out.print(root.data+" ");
+        inorder(root.right);
     }
 	public static void main(String[] args) {
 	    TreeNode root = buildtree();
-	    System.out.print("Preorder Traversal : ");
-	    postorder(root);
+	    System.out.print("Inorder Traversal : ");
+	    inorder(root);
 	}
 }
